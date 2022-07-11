@@ -2,7 +2,7 @@ package com.coffeecat.springbootcourse.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.MailSender;
+//import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
@@ -42,7 +42,7 @@ public class MailService {
 
     //Thymeleaf - Configure the template Engine in MailService Constructor
     @Autowired
-    public MailService(TemplateEngine templateEngine) {
+    public MailService( TemplateEngine templateEngine) {
 
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
 
@@ -79,7 +79,7 @@ public class MailService {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
 
                 message.setTo(emailAddress);
-                message.setFrom(new InternetAddress("no-reply@coffeecat.com")); //make random address name
+                message.setFrom(new InternetAddress("no-reply@codeEncounter.com")); //make random address name
                 message.setSubject("Please verify your Email Address");
                 message.setSentDate(new Date()); //set to now
 
